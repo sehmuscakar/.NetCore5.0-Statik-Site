@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TekBaşımaCoreProje1.props" />
+</Project>

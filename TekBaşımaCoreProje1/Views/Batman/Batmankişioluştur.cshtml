@@ -1,0 +1,58 @@
+﻿@model ArvesoftVeriTanımlama
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="table-bordered"> Yeni Ekip Arkadaşı Oluştur</h3>
+<br />
+<form asp-action="Batmankişioluştur" asp-controller="Batman" method="post">
+
+    <div class="form-group">
+        <label>
+            Adınız:
+            <span asp-validation-for="@Model.Adı" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Adı" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>
+            Soyadınız:
+            <span asp-validation-for="@Model.Soyadı" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Soyadı" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>
+            Kıdeminiz:
+            <span asp-validation-for="@Model.Kıdemi" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Kıdemi" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>
+            Göreviniz:
+            <span asp-validation-for="@Model.Görevi" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Görevi" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>
+            Yaşınız:
+            <span asp-validation-for="@Model.Yaşı" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Yaşı" />
+    </div>
+    <br />
+
+    <div class="form-group text-right">
+        <button type="submit" class="alert-primary form-text">Yeni Kişi Ekle</button>
+
+    </div>
+    <br />
+    <div asp-validation-summary="All" class="text-bg-danger"></div>
+</form>

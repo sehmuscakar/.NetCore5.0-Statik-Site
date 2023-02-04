@@ -1,0 +1,44 @@
+﻿@model List<ArvesoftVeriTanımlama>
+<h3 class="accordion-header"> Arvesoft Yazılım Teknolojileri Ekip Arkadaşlarımız</h3>
+<img src="~/arvesoft.jpeg" width="450" height="250" />
+<div class="row">
+    <div class="col-6 float-lg-right" >
+        <a class="btn btn-outline-danger" asp-action="Konyakişioluştur" asp-controller="Konya">Konya için Yeni Ekip Arkadaşı Ekle</a>
+        <br />
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th> Adı </th>
+                    <th> soyadı</th>
+                    <th>Kıdem Seviyesi</th>
+                    <th>Görevi</th>
+                    <th>Yaşı</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>
+                            @item.Adı
+                        </td>
+                        <td>@item.Soyadı</td>
+                        <td>@item.Kıdemi</td>
+                        <td>@item.Görevi</td>
+                        <td>@item.Yaşı</td>
+
+                        <td>
+                            <a class="btn btn-outline-primary" asp-action="Konyaverikaldır" asp-controller="Konya" asp-route-id="@item.ID">Kişi kaldır</a>
+                        </td>
+                        <td><a class="btn btn-outline-info" asp-action="Konyaverigüncelle" asp-controller="Konya" asp-route-id="@item.ID">Kişi Güncelle</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+@await Component.InvokeAsync("Konyailetişim")

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*<link href="~/StyleSheet.css" rel="stylesheet" />*@
+<link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet"/> <!-- senin bootstrap şeylerin çalşması için client side library ordan twiter bootstrap ı yuklemen lazım clas lar içinde gecerli -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Home/Index">Arvesoft Yazılım Teknolojileri</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Ankara/Index">Ankara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/İstanbul/Index">İstanbul</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Batman/Index">Batman</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Şanlıurfa/Index">Şanlıurfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Konya/Index">Konya</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="bg-dark p-2 text-center text-white " >
+        Arvesoft Yazılım Teknolojileri Tüm Hakları Saklıdır.
+    </footer>
+  
+</body>
+</html>

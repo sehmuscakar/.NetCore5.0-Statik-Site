@@ -1,0 +1,13 @@
+﻿@model List<Yeni>
+
+<table class="table table-hover table-bordered ">
+    <tr>
+        <th>Şirketimizin Yoğunluklu Hizmet verdiği şehirlerimiz</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.sehirler</td>
+        </tr>
+    }
+</table>

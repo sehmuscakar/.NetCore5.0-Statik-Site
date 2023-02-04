@@ -1,0 +1,29 @@
+﻿@model VeriTipleriTanımlamaModeli
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Kişi Bilgilerini  Güncelle</h3>
+<form asp-action="Update" asp-controller="Home" method="post">
+
+    <div class="form-group">
+        <label>Proje İsmi:</label>
+        <input asp-for="@Model.Proje" />
+    </div>
+
+    <div class="form-group">
+        <label>Projenin yapıldığı Şehir:</label>
+        <input asp-for="@Model.Sehir" />
+    </div>
+    <div class="form-group">
+        <label>Şirkete Ödenen Ücret:</label>
+        <input asp-for="@Model.Ücret" />
+    </div> 
+
+    <div>
+        <button class="alert-info">Güncelle</button>
+    </div>
+</form>
+<br />
+<br />
+<br />

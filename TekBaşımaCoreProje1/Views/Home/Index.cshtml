@@ -1,0 +1,56 @@
+﻿@model List<TekBaşımaCoreProje1.Models.VeriTipleriTanımlamaModeli>
+<!-- biz veri tiplerini hangi modelde tanımlamışsak o modeli view de tanımla ki veriler viewe gelsin-->
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // eğer mvc kulnıyorsan layout kulanmak zorundasın
+}
+
+<div class="col-10 dropdown-menu-right">
+    <!-- 8 satırını da buraya kullandık-->
+
+    <img src="~/arvesoft.jpeg" width="450" height="250"/>
+    <br />
+    <a class="btn btn-outline-secondary" asp-action="Yenikişioluştur" asp-controller="Home">Yeni İş Ekle </a>
+    <br />
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Proje Sayısı:</th>
+                <th> Proje İsmi:</th>
+                <th> Projenin Satıldığı Şehir:</th>
+                <th> Şirkete ödenen Ücret:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>@item.Proje</td>
+                    <td>@item.Sehir</td>
+                    <td>@item.Ücret</td>
+
+                    <td>
+                        <a class="btn btn-outline-primary" asp-action="Update" asp-controller="Home" asp-route-id="@item.ID">İş Güncelle</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-info" asp-action="Remove" asp-controller="Home" asp-route-id="@item.ID">İş Sil</a>
+                    </td>
+                </tr>
+
+            }
+          
+
+        </tbody>
+    </table>
+</div>
+<div class="col-3" >
+    <!-- yukarda bi satır açtık o satırın 4 sutununu buraya-->
+    @await Component.InvokeAsync("meslekler", new { @color = "red" })<!-- meslekler viewcomponentin içindeki classın isimi ,bu paremterede Invoke de tanımladığın paremtre vlausu gibi düşün-->
+</div>
+<div class="col-2">
+
+    @await Component.InvokeAsync("sehirler")
+</div>

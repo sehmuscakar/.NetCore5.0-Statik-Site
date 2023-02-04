@@ -1,0 +1,32 @@
+﻿@model VeriTipleriTanımlamaModeli
+@{
+    Layout= "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="table-bordered" >Yeni İş Ekle</h3>
+<br />
+<form asp-action="Yenikişioluştur" asp-controller="Home" method="post">
+    <!--burda form controlldeki blogun içine giidiyor-->
+    <div class="form-group">
+        <label>
+            Projenin İsmi:<span class="text-danger">*</span>
+            <span asp-validation-for="@Model.Proje" class="text-danger"></span>
+        </label>
+        <input asp-for="@Model.Proje" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Projenin Yapıldığı Şehir:<span asp-validation-for="@Model.Sehir" class="text-danger"></span></label>
+        <input asp-for="@Model.Sehir" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Şirkete Ödenen Ücret:<span asp-validation-for="@Model.Ücret" class="text-danger"></span> </label>
+        <input asp-for="@Model.Ücret" />
+    </div>
+    <div class="form-group text-right">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+    <br />
+    <div asp-validation-summary="All" class="text-danger"></div>
+</form>
